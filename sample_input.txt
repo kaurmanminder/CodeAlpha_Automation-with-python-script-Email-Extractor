@@ -1,0 +1,92 @@
+========================================================================
+             PROJECT COMMUNICATIONS AND STAFF DIRECTORY
+========================================================================
+Date: June 23, 2026
+Author: Admin Department (admin@company-hub.org)
+
+Hello team,
+
+Please find the updated list of contacts for the upcoming automation launch.
+For any general queries, contact our support line or email us directly at
+support@company-hub.org.
+
+Here is the current directory of department representatives:
+
+1. Operations & Engineering:
+   - Alice Carter: alice.carter@engineering.tech-hub.io
+   - Bob Jenkins: bob_jenkins123@hub-net.com
+   - General Dev Team: dev-team+support@tech-hub.io
+
+2. Human Resources & Administration:
+   - HR department: hr@company-hub.org
+   - Careers: careers.info@jobs-portal.co.uk
+   - Internal Admin: admin@company-hub.org  <-- (Duplicate to test uniqueness)
+
+3. External Partners and Freelancers:
+   - Lead consultant: john.doe@consulting-services.net
+   - Freelance designer: creative.design2026@freelance-art.com
+   - Marketing agency: contact@market-reach.co
+
+------------------------------------------------------------------------
+SYSTEM DETECTED LOGS & TRICKY STRINGS (To test extraction accuracy):
+------------------------------------------------------------------------
+The regular expression parser must IGNORE the following invalid formats:
+* Missing local part: @missingusername.com
+* Missing domain part: user@.com
+* Missing TLD: contact@companydomain
+* Trailing dot in domain: test.user@domain.
+* Double dot in domain: error@domain..com
+* Space in local part: space in@email.com
+* TLD too short: admin@domain.c
+* Special chars in domain: user@dom*ain.com
+* Random string: just.some.normal.text.without.at.sign
+
+
+4. Finance & Accounts:
+   - Finance Manager: finance.team@global-finance.org
+   - Accounts Support: accounts.helpdesk@finance-services.com
+
+------------------------------------------------------------------------
+ADDITIONAL CONTACTS FOR PROJECT SUPPORT
+------------------------------------------------------------------------
+For invoice and payment-related queries, please contact
+finance.team@global-finance.org.
+
+If you experience issues with account verification or billing records,
+email accounts.helpdesk@finance-services.com.
+
+For vendor onboarding assistance, reach out to
+vendor.relations@business-connect.net.
+
+For training and workshop schedules, contact
+learning.support@corporate-training.org.
+
+4. Finance & Accounts:
+   - Finance Manager: finance.team@global-finance.org
+   - Accounts Support: accounts.helpdesk@finance-services.com
+
+5. Business Relations & Training:
+   - Vendor Relations: vendor.relations@business-connect.net
+   - Learning Support: learning.support@corporate-training.org
+
+------------------------------------------------------------------------
+ADDITIONAL SUPPORT CONTACTS
+------------------------------------------------------------------------
+For invoice and payment-related queries, contact finance.team@global-finance.org.
+
+For account verification and billing support, email
+accounts.helpdesk@finance-services.com.
+
+For vendor onboarding and partnership requests, reach out to
+vendor.relations@business-connect.net.
+
+For employee training schedules and workshops, contact
+learning.support@corporate-training.org.
+
+Note: Please send the monthly reports to reporting@company-hub.org by Friday.
+If there are server issues, notify dev-team+support@tech-hub.io immediately.
+
+Thank you,
+Management Team
+office-admin@company-hub.org
+========================================================================
