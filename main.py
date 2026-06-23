@@ -14,14 +14,6 @@ import os
 import re
 import sys
 
-# Try importing Pillow (ImageGrab) for the optional screenshot feature.
-# If Pillow is not installed, the program will run normally and skip the screenshot.
-try:
-    from PIL import ImageGrab
-    PILLOW_AVAILABLE = True
-except ImportError:
-    PILLOW_AVAILABLE = False
-
 # Define a robust, industry-standard Regular Expression pattern for email validation.
 # Matches: local-part@domain-part.tld
 # - Local part: letters, numbers, dots, underscores, percents, plus, hyphen
@@ -36,7 +28,6 @@ EMAIL_REGEX = re.compile(
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_INPUT_PATH = os.path.join(SCRIPT_DIR, "sample_input.txt")
 DEFAULT_OUTPUT_PATH = os.path.join(SCRIPT_DIR, "extracted_emails.txt")
-DEFAULT_SCREENSHOT_PATH = os.path.join(SCRIPT_DIR, "screenshots", "output.png")
 
 
 def print_banner():
@@ -126,43 +117,6 @@ def save_emails(emails: list, file_path: str) -> None:
             file.write(email + "\n")
 
 
-def capture_screenshot(output_path: str) -> None:
-    """
-    Captures a screenshot of the active screen display (terminal output)
-    and saves it to the specified output path.
-
-    This feature is optional and fails gracefully if Pillow is not installed,
-    or if there is a system-level issue (e.g., headless environment).
-
-    Parameters:
-        output_path (str): The absolute path to save the screenshot.
-    """
-    if not PILLOW_AVAILABLE:
-        print("[*] Info: To auto-generate a terminal screenshot, install Pillow:")
-        print("    pip install Pillow")
-        return
-
-    try:
-        # Resolve path and extract the directory
-        output_dir = os.path.dirname(os.path.abspath(output_path))
-
-        # Automatically create the screenshots folder if it does not exist
-        if output_dir and not os.path.exists(output_dir):
-            os.makedirs(output_dir, exist_ok=True)
-
-        print("[*] Automatically capturing execution screenshot...")
-
-        # Grab the screen image (this grabs the display, capturing the CLI window)
-        screenshot = ImageGrab.grab()
-        screenshot.save(output_path)
-
-        print(f"[+] Screenshot successfully saved to: {output_path}")
-    except Exception as err:
-        # Catch any unexpected errors (e.g. permission issues, lack of GUI)
-        # and print a warning rather than stopping the email extraction process.
-        print(f"[!] Warning: Could not generate screenshot: {err}")
-
-
 def parse_arguments():
     """
     Parses command-line arguments using the argparse library.
@@ -182,11 +136,6 @@ def parse_arguments():
         "-o", "--output",
         default=DEFAULT_OUTPUT_PATH,
         help="Path to the output text file"
-    )
-    parser.add_argument(
-        "-s", "--screenshot",
-        default=DEFAULT_SCREENSHOT_PATH,
-        help="Path to save the execution screenshot"
     )
     return parser.parse_args()
 
@@ -237,9 +186,6 @@ def main():
             print(f"  {idx}. {email}")
         print("-" * 70)
         print(f"[+] All unique emails have been saved to: {args.output}")
-
-        # Optional Step 4: Automatically capture screenshot of execution
-        capture_screenshot(args.screenshot)
 
     except FileNotFoundError as fnf_error:
         print(f"[ERROR] File Not Found: {fnf_error}", file=sys.stderr)

@@ -17,17 +17,14 @@ This project automates the extraction workflow. It parses text files of any size
 * **Regular Expression (Regex) Matching**: Uses a highly precise regex pattern to ensure only correctly formatted emails are extracted, ignoring incomplete or malformed strings.
 * **Auto-Deduplication & Sorting**: Normalizes all matched emails to lowercase and removes duplicates, saving them in alphabetical order.
 * **Robust File & Error Handling**: Gracefully handles missing files, permission errors, and empty/whitespace-only input documents, providing clear feedback instead of system tracebacks.
-* **Flexible CLI Interface**: Accepts command-line arguments to specify custom input/output file paths and screenshot save paths.
-* **Optional Automatic Screenshot**: Automatically captures a screenshot of your screen (showing execution results) upon success and saves it to the `screenshots/` directory.
-* **Zero Dependency Core**: Core functionality runs entirely on Python's built-in libraries; the screenshot feature is optional and fails gracefully if its dependency is missing.
+* **Flexible CLI Interface**: Accepts command-line arguments to specify custom input and output file paths.
+* **No External Dependencies**: Built entirely using Python's standard libraries, making it fully portable and instant to set up.
 
 ---
 
 ## 3. Technologies Used
 * **Language**: Python 3.10+
-* **Dependencies**:
-  * Python Standard Libraries (Core)
-  * **Pillow>=10.0.0** (Optional, for automatic screenshot feature)
+* **Dependencies**: None (Uses built-in standard libraries)
 
 ---
 
@@ -59,10 +56,6 @@ This project applies core beginner-to-intermediate Python concepts widely used i
 * **Usage Location**: `main.py` -> `main()` coordinator function.
 * **Explanation**: Captures `FileNotFoundError`, `PermissionError`, and `ValueError` to output meaningful, colored logs for the operator instead of exposing raw traceback dumps.
 
-### G. Optional Dependencies & Conditional Imports
-* **Usage Location**: `main.py` -> Top of file.
-* **Explanation**: A `try-except ImportError` block handles the optional import of Pillow's `ImageGrab` module. If Pillow is not installed on the system, the program bypasses the screenshot task gracefully rather than crashing.
-
 ---
 
 ## 5. Installation Steps
@@ -78,12 +71,11 @@ Since the project runs strictly on the standard Python distribution, the install
    ```
    *(Note: Python 3.10 or higher is recommended).*
 
-3. **Install Dependencies (Optional)**:
-   To enable the automatic screenshot feature, install the `Pillow` library using `requirements.txt`:
+3. **Install Dependencies**:
+   This project does not require external installations. You can view the `requirements.txt` file to verify:
    ```bash
-   pip install -r requirements.txt
+   cat requirements.txt
    ```
-   *(Note: The core email extraction runs perfectly without any dependencies if you choose not to install Pillow).*
 
 ---
 
@@ -102,13 +94,7 @@ You can pass custom files using `--input` (`-i`) and `--output` (`-o`) arguments
 python main.py -i my_input_logs.txt -o my_output_emails.txt
 ```
 
-### Option C: Customizing Screenshot Capture
-Specify a custom directory or file path for the automatic screenshot:
-```bash
-python main.py --screenshot custom_dir/output.png
-```
-
-### Option D: Viewing Help Documentation
+### Option C: Viewing Help Documentation
 To view the command-line usage manual:
 ```bash
 python main.py --help
@@ -172,9 +158,7 @@ Email-Extractor/
 ├── sample_input.txt         # Realistic input text containing email addresses
 ├── extracted_emails.txt     # Generated output file with unique email addresses
 ├── README.md                # Comprehensive project documentation
-├── requirements.txt         # Dependencies checklist (Standard library)
-└── screenshots/             # Mockups and execution evidence
-    └── output.png           # Screenshot of terminal output execution
+└── requirements.txt         # Dependencies checklist (Standard library)
 ```
 
 ---
