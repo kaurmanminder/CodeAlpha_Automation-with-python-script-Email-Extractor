@@ -171,10 +171,3 @@ Email-Extractor/
 * **Export to CSV/Excel**: Enhance the save utility to export emails to structured sheets alongside domain analysis.
 * **Email Domain Grouping**: Group extracted emails by domain name (e.g., Gmail, Outlook, company domain) and export metrics.
 
----
-
-## 10. Author Section
-* **Developer**: Python Automation Intern
-* **Internship Track**: Task Automation with Python Scripts
-* **Submission Date**: June 23, 2026
-* **Organization**: Internship College Portfolio
