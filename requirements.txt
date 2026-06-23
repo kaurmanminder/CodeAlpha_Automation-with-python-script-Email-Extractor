@@ -1,9 +1,12 @@
 # Requirements for Email Address Extractor and Saver
-# This project uses only Python Standard Libraries.
-# No external packages are required to run this script.
 #
-# Python Standard Library Modules Used:
-# - re: Regular expression matching operations
-# - os: Miscellaneous operating system interfaces
-# - sys: System-specific parameters and functions
-# - argparse: Parser for command-line options, arguments and sub-commands
+# Core functionalities use Python Standard Libraries:
+# - re (regex operations)
+# - os (system paths and folders)
+# - sys (exit codes and streams)
+# - argparse (CLI arguments)
+#
+# Optional Dependencies:
+# Pillow is required for the automatic terminal screenshot feature.
+# Run 'pip install -r requirements.txt' to install it.
+Pillow>=10.0.0
